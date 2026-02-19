@@ -18,11 +18,12 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
     // 3. get Amount
 
     const amount = getvalueFromInput("add-money-account");
-    const newBalance =getBalance() +Number(amount);
+    const currentBalance =getBalance();
+    const newBalance = currentBalance + Number(amount);
 
-    const pin =getvalueFromInput ("add-money-pin");
+    const pin = getvalueFromInput ("add-money-pin");
     if(pin =="1234"){
-        alert("Add Money Sucessfully");
+        alert(` Add Money Success ${bankAccount} at${new Date()}`);
         setBalance(newBalance);
 
     }else{

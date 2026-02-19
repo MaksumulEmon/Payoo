@@ -19,3 +19,20 @@ function setBalance(value){
     const balanceElement =document.getElementById("balance");
     balanceElement.innerText =value;
 }
+
+// Macj=hine Id > hide all> Show All
+
+function showOnly(id){
+   
+    const addmoney =document.getElementById("add-money");
+    const cashout =document.getElementById("cashout");
+    //  console.log(`add money - ${addmoney} , cashout - ${cashout}`)
+    // Alll hide
+    addmoney.classList.add("hidden");
+    cashout.classList.add("hidden");
+
+    // id Wala Element  ta ke tmi show Koro 
+     const selected = document.getElementById(id);
+     selected.classList.remove("hidden");
+}
+
