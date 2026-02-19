@@ -26,10 +26,12 @@ function showOnly(id){
    
     const addmoney =document.getElementById("add-money");
     const cashout =document.getElementById("cashout");
+    const history =document.getElementById("history");
     //  console.log(`add money - ${addmoney} , cashout - ${cashout}`)
     // Alll hide
     addmoney.classList.add("hidden");
     cashout.classList.add("hidden");
+    history.classList.add("hidden");
 
     // id Wala Element  ta ke tmi show Koro 
      const selected = document.getElementById(id);

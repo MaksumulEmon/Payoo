@@ -18,15 +18,36 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
     // 3. get Amount
 
     const amount = getvalueFromInput("add-money-account");
-    const currentBalance =getBalance();
+    const currentBalance = getBalance();
     const newBalance = currentBalance + Number(amount);
 
-    const pin = getvalueFromInput ("add-money-pin");
-    if(pin =="1234"){
+    const pin = getvalueFromInput("add-money-pin");
+    if (pin == "1234") {
         alert(` Add Money Success ${bankAccount} at${new Date()}`);
         setBalance(newBalance);
 
-    }else{
+
+        // 1.history Container  dore niya asbo
+
+        const history = document.getElementById('history-container');
+
+        // 2.new div create Korbo
+        const newHistory = document.createElement("div");
+
+        // 3.new div innerHtml Add korbo
+
+        newHistory.innerHTML = `
+        <div class="transation-card p-5 bg-base-100">
+        Add Money Success  from 
+        ${bankAccount} ,acc-no ${accno} 
+        at ${new Date()}
+        </div>
+        `;
+
+        // history container a newDiv addd korbo Append
+        history.append(newHistory);
+
+    } else {
         alert("InValid");
         return;
     }

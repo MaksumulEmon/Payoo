@@ -11,7 +11,7 @@ document.getElementById("cashout-btn").addEventListener("click", function () {
     // const balance = balanceElement.innerText;
     // console.log(balance);
 
-    const CurrentBalance =getBalance();
+    const CurrentBalance = getBalance();
     const newBalance = CurrentBalance - Number(cashOutAmount);
     console.log(newBalance);
 
@@ -24,7 +24,32 @@ document.getElementById("cashout-btn").addEventListener("click", function () {
     if (pin == "1234") {
         alert("Cashour Sucessfully");
         setBalance(newBalance);
-    //    document.getElementById("balance").innerText = newBalance;
+        //    document.getElementById("balance").innerText = newBalance;
+
+
+
+        // 1.history Container  dore niya asbo
+
+        const history = document.getElementById('history-container');
+
+        // 2.new div create Korbo
+        const newHistory = document.createElement("div");
+
+        // 3.new div innerHtml Add korbo
+
+        newHistory.innerHTML = `
+        <div class="transation-card p-5 bg-base-100">
+        Cash Out${cashOutAmount} Taka Success to
+        ${cashoutNumber} ,
+        at ${new Date()}
+        </div>
+        `;
+
+        // history container a newDiv addd korbo Append
+        history.append(newHistory);
+
+
+
     } else {
         alert("Invaild Pin");
         return;
