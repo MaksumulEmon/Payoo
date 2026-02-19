@@ -15,7 +15,7 @@ document.getElementById('login-btn').addEventListener("click" , function(){
     if(contractNumber =="01234567890" && pin =="1234"){
         alert("Log in Sucessfully")
         // window.location.replace("/home.html");
-        window.location.assign("/home.html");
+        window.location.assign("home.html");
     }else{
         alert("Log in Failed");
         return;
